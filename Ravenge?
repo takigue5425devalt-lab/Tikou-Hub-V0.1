@@ -1,1 +1,14 @@
--- Gui to Lua -- Version: 3.2 -- Instances: local MainHubGui = Instance.new("ScreenGui") local MainHubFrame = Instance.new("Frame") local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint") local Title = Instance.new("TextLabel") local Version = Instance.new("TextLabel") local TabsFrame = Instance.new("Frame") local Player = Instance.new("TextButton") local Settings = Instance.new("TextButton") local PlayerTabFrame = Instance.new("Frame") local Speed = Instance.new("TextButton") --Properties: MainHubGui.Name = "MainHubGui" MainHubGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") MainHubGui.Enabled = true MainHubGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling MainHubFrame.Name = "MainHubFrame" MainHubFrame.Parent = MainHubGui MainHubFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255) MainHubFrame.BorderColor3 = Color3.fromRGB(0, 0, 0) MainHubFrame.BorderSizePixel = 0 MainHubFrame.Position = UDim2.new(0.218045115, 0, 0.179104477, 0) MainHubFrame....
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Tikou Hub V0.1", "Midnight")
+
+
+
+local sc = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+local btn = Instance.new("TextButton", sc)
+
+btn.Size = UDim2.new(0.1,0.1,0.1)
+
+btn.MouseButton1Down:Connect(function()
+local Window = Library.CreateLib("Tikou Hub V0.1", "Midnight")
+end)
