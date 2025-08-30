@@ -1,28 +1,38 @@
 local sc = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
 local btn = Instance.new("TextButton", sc)
+local uiCorner = Instance.new("UICorner", btn)
+uiCorner.CornerRadius = UDim.new(0, 10)
 
-btn.Size = UDim2.new(0.1,0.1,0.1)
+sc.ResetOnSpawn = false
+sc.IgnoreGuiInset = true
+
+btn.Size = UDim2.new(0.05, 0, 0.1, 0)
+btn.Position = UDim2.new(0, 180, 0, 10)
+btn.BackgroundColor3 = Color3.fromHSV(0.5, 0.333333, 1)
+btn.Font = Enum.Font.FredokaOne
+btn.TextScaled = true
+btn.Text = "Tikou"
 
 btn.MouseButton1Down:Connect(function()
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZeianRussell/Kavo-UI-Library/main/Movable.source.lua"))()
+	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZeianRussell/Kavo-UI-Library/main/Movable.source.lua"))()
 
-local Window = Library.CreateLib("Tikou Hub V0.1", "Midnight")
+	local Window = Library.CreateLib("Tikou Hub V0.1", "Midnight")
 
-local Tab = Window:NewTab("Player Misc")
+	local Tab = Window:NewTab("Player Misc")
 
-local Section = Tab:NewSection("WalkSpeed & JumpPower")
+	local Section = Tab:NewSection("WalkSpeed & JumpPower")
 
-Section:NewButton("SpeedBoost", "Speed * 4", function()
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 64
+	Section:NewButton("SpeedBoost", "Speed * 4", function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 64
 
-end)
+	end)
 
-Section:NewButton("JumpBoost", "JumpPower * 10", function()
-    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = 50
+	Section:NewButton("JumpBoost", "JumpPower * 10", function()
+		game.Players.LocalPlayer.Character.Humanoid.JumpHeight = 50
 
-end)
+	end)
 
-Section:NewButton("Kill The Player", "Bro Are You Sure You Need To Kill Your Self?", function()
-    game.Players.LocalPlayer.Character.Humanoid.Health = 0
-end)
+	Section:NewButton("Kill The Player", "Bro Are You Sure You Need To Kill Your Self?", function()
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	end)
 end)
