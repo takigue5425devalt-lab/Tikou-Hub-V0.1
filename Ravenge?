@@ -1,14 +1,28 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-
-local Window = Library.CreateLib("Tikou Hub V0.1", "Midnight")
-
-
-
 local sc = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
 local btn = Instance.new("TextButton", sc)
 
 btn.Size = UDim2.new(0.1,0.1,0.1)
 
 btn.MouseButton1Down:Connect(function()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZeianRussell/Kavo-UI-Library/main/Movable.source.lua"))()
+
 local Window = Library.CreateLib("Tikou Hub V0.1", "Midnight")
+
+local Tab = Window:NewTab("Player Misc")
+
+local Section = Tab:NewSection("WalkSpeed & JumpPower")
+
+Section:NewButton("SpeedBoost", "Speed * 4", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 64
+
+end)
+
+Section:NewButton("JumpBoost", "JumpPower * 10", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = 50
+
+end)
+
+Section:NewButton("Kill The Player", "Bro Are You Sure You Need To Kill Your Self?", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
 end)
